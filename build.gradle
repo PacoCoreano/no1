@@ -25,6 +25,17 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 
 dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('com.h2database:h2')
+    compile('org.projectlombok:lombok')
     compile('org.springframework.boot:spring-boot-starter-web')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+test {
+    useJUnitPlatform {
+        includeEngines 'junit-vintage'
+        excludeEngines 'junit-jupiter'
+    }
 }
